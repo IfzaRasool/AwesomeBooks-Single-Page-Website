@@ -1,0 +1,120 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.display-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+#books {
+  margin-left: 2rem;
+}
+
+.remove-btn {
+  max-width: 5rem;
+  max-height: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 20rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 6px #999;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+input {
+  font-size: 1.2rem;
+  max-width: 16rem;
+  padding: 0.5rem;
+}
+
+input::placeholder {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.add-btn {
+  max-width: 5rem;
+  padding: 0.5rem;
+  margin-left: 12rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.main-heading {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.booksdisplay {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  border: 0 solid black;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.w-50 {
+  width: 50%;
+  padding: 0.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+li:nth-child(odd) {
+  background-color: rgb(230, 226, 228);
+}
+
+.navigation-bar {
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+  border: 1px solid black;
+  max-width: 100%;
+}
+
+.nav-item {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.nav-subitem {
+  margin-left: 24rem;
+}
+
+a {
+  list-style: none;
+}
+
+footer {
+  padding: 2rem;
+  margin-top: 15rem;
+  border: 1px solid black;
+}
