@@ -1,27 +1,53 @@
 class BooksCollection {
   constructor() {
     this.bookDiv = document.querySelector('.list_books > ul');
-    this.ul = document.querySelector('ul');
     this.form = document.querySelector('.add-book-form');
-    this.bookList = [] || JSON.parse(localStorage.getItem('book_info'));
-    this.navitem = document.querySelector('.nav-subitem');
+    this.bookList = JSON.parse(localStorage.getItem('book_info')) || [];
+    this.navItem = document.querySelector('.nav_items');
+    this.container = document.querySelector('.container');
   }
 
   // read books to view
-  readValue(books) {
+  readBook(books) {
     this.bookDiv.innerHTML = '';
-    this.ul.style.borderWidth = '0px';
+    this.bookDiv.style.borderColor = 'white';
 
     if (books) {
       books.forEach((book, index) => {
-        this.ul.style.borderWidth = '2px';
+        this.bookDiv.style.borderColor = '#091a40';
         const li = document.createElement('li');
-        li.innerHTML = `<div class="w-50"><span>"${book.title_name}" by</span>
-         <span>${book.author_name}</span></div>
-         <button class="remove-btn" data-id="${index}">remove</button><br>`;
+        li.innerHTML = `
+          <span> <q>${book.title_name}</q> by ${book.author_name} </span>
+          <span>
+            <button class="btn" data-id="${index}">Remove</button>
+          </span>
+         `;
         this.bookDiv.appendChild(li);
       });
     }
+  }
+
+  // link sections
+  switchSection() {
+    this.navItem.addEventListener('click', (e) => {
+      const divs = Array.from(this.container.children);
+      divs.forEach((div) => {
+        if (e.target.id === div.className) {
+          const list = e.target.parentElement.parentElement.children;
+          Array.from(list).forEach((list) => {
+            if (list.firstElementChild.id !== e.target.id) {
+              list.firstElementChild.classList.remove('active');
+            } else {
+              e.target.classList.add('active');
+            }
+          });
+
+          div.classList.add('active');
+        } else {
+          div.classList.remove('active');
+        }
+      });
+    });
   }
 
   // create book item
@@ -33,51 +59,41 @@ class BooksCollection {
     });
     // update local storage
     localStorage.setItem('book_info', JSON.stringify(this.bookList));
-    this.readValue(this.bookList);
+    this.readBook(this.bookList);
 
     // clear form
     this.form.elements.title.value = '';
     this.form.elements.author.value = '';
   }
 
-  showbooks(books) {
-    this.ul.style.borderWidth = '0px';
-
-    if (books) {
-      books.forEach((book, index) => {
-        this.ul.style.borderWidth = '2px';
-        const li = document.createElement('li');
-        li.innerHTML = `<div class="w-50"><span>"${book.title_name}" by</span>
-         <span>${book.author_name}</span></div>
-         <button class="remove-btn" data-id="${index}">remove</button><br>`;
-        this.bookDiv.appendChild(li);
-      });
-    }
-  }
-
   // remove book
   removeBook(btn) {
     this.bookList = this.bookList.filter(
-      (book, index) => index !== Number(btn.dataset.id)
+      (book, index) => index !== Number(btn.dataset.id),
     );
     localStorage.setItem('book_info', JSON.stringify(this.bookList));
-    this.readValue(this.bookList);
+    this.readBook(this.bookList);
   }
 
   handleClick() {
-    this.readValue(this.bookList);
-    this.showbooks(this.bookList);
-    this.navitem.addEventListener('click', this.showbooks(this.bookList));
+    // listen to switches
+    this.switchSection();
+
+    // read books from local storage
+    this.readBook(this.bookList);
+
     // event listeners
+    // create a book
     this.form.addEventListener('submit', (e) => this.addBook(e));
 
+    // delete book
     this.bookDiv.addEventListener('click', (e) => {
-      if (e.target.classList.contains('remove-btn')) {
+      if (e.target.classList.contains('btn')) {
         this.removeBook(e.target);
       }
     });
   }
 }
 
-// const bookObject = new BooksCollection();
-// bookObject.handleClick();
+const bookObject = new BooksCollection();
+bookObject.handleClick();

@@ -15,13 +15,13 @@
 
         <ul class="nav_items">
           <li>
-            <a href="#">List</a>
+            <a href="#" id="list_books" class="active">List</a>
           </li>
           <li>
-            <a href="#">Add New</a>
+            <a href="#" id="add_books">Add New</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" id="contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -31,34 +31,9 @@
 
       <div class="container">
         <!-- ##### list book section ###### -->
-        <div class="list_books">
+        <div class="list_books active">
           <h2 class="title">All Awesome Books</h2>
-          <ul class="books_display">
-            <li>
-              <span> <q>Title</q> by Author </span>
-              <span>
-                <button class="btn">Remove</button>
-              </span>
-            </li>
-            <li>
-              <span> <q>Title</q> by Author </span>
-              <span>
-                <button class="btn">Remove</button>
-              </span>
-            </li>
-            <li>
-              <span> <q>Title</q> by Author </span>
-              <span>
-                <button class="btn">Remove</button>
-              </span>
-            </li>
-            <li>
-              <span> <q>Title</q> by Author </span>
-              <span>
-                <button class="btn">Remove</button>
-              </span>
-            </li>
-          </ul>
+          <ul class="books_display"></ul>
         </div>
 
         <!-- ##### add new book section ###### -->
@@ -86,6 +61,6 @@
       </div>
     </section>
     <footer class="footer">Copyright ...</footer>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>

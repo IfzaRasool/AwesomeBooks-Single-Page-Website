@@ -67,12 +67,12 @@ a:hover {
   border-radius: var(--radius);
   padding: 10px 45px;
   border: var(--border);
-  background: transparent;
   color: var(--dark);
   font-family: var(--font);
   font-size: inherit;
   margin-left: auto;
   transition: var(--trans);
+  background: white;
 }
 
 .btn:hover {
@@ -160,6 +160,10 @@ a:hover {
   background: #eee;
 }
 
+.books_display li span {
+  text-transform: capitalize;
+}
+
 /* add books section */
 .add_books {
   display: none;
@@ -183,6 +187,7 @@ input {
   width: 100%;
   margin: 0 auto 35px;
   padding: 0.5rem;
+  font-family: var(--font);
 }
 
 input::placeholder {
