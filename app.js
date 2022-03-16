@@ -1,8 +1,8 @@
 class BooksCollection {
   constructor() {
-    this.bookDiv = document.querySelector('#books > ul');
+    this.bookDiv = document.querySelector('.list_books > ul');
     this.ul = document.querySelector('ul');
-    this.form = document.querySelector('.add-book');
+    this.form = document.querySelector('.add-book-form');
     this.bookList = [] || JSON.parse(localStorage.getItem('book_info'));
     this.navitem = document.querySelector('.nav-subitem');
   }
@@ -58,7 +58,7 @@ class BooksCollection {
   // remove book
   removeBook(btn) {
     this.bookList = this.bookList.filter(
-      (book, index) => index !== Number(btn.dataset.id),
+      (book, index) => index !== Number(btn.dataset.id)
     );
     localStorage.setItem('book_info', JSON.stringify(this.bookList));
     this.readValue(this.bookList);
@@ -79,5 +79,5 @@ class BooksCollection {
   }
 }
 
-const bookObject = new BooksCollection();
-bookObject.handleClick();
+// const bookObject = new BooksCollection();
+// bookObject.handleClick();
