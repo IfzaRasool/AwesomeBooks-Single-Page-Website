@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Awesome books</title>
+  </head>
+
+  <body class="main">
+    <header class="header">
+      <div class="nav_bar">
+        <a href="#" class="nav_brand"> Awesome Books </a>
+
+        <ul class="nav_items">
+          <li>
+            <a href="#" id="list_books" class="active">List</a>
+          </li>
+          <li>
+            <a href="#" id="add_books">Add New</a>
+          </li>
+          <li>
+            <a href="#" id="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="display_sec">
+      <p class="time">March 16, 2020 16:53:34 pm</p>
+
+      <div class="container">
+        <!-- ##### list book section ###### -->
+        <div class="list_books active">
+          <h2 class="title">All Awesome Books</h2>
+          <ul class="books_display"></ul>
+        </div>
+
+        <!-- ##### add new book section ###### -->
+        <div class="add_books">
+          <h2 class="title">Add a new book</h2>
+          <form class="add-book-form">
+            <input type="text" placeholder="Title" name="title" required />
+            <input type="text" placeholder="Author" name="author" required />
+            <button type="submit" class="btn">Add</button>
+          </form>
+        </div>
+
+        <!-- ##### contact section ###### -->
+        <div class="contact">
+          <h2 class="title">Contact Information</h2>
+          <p>Do you have any question or you just want to say hello?</p>
+          <p>You can reach out to us!</p>
+
+          <ul>
+            <li>Our email: mail@mail.com</li>
+            <li>Our phone number: +9109428453</li>
+            <li>Our address: StreetName 22, 84567, Islamabad, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">Copyright ...</footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
