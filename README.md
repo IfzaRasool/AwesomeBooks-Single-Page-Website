@@ -9,6 +9,10 @@
 - html, css, js
 - eslint, hint, styleint
 
+## Screenshot Demo
+
+![Book Page](./images/demo2.png)
+
 ## Live Demo (if available)
 
 [Live Demo Link](https://ifzarasool.github.io/AwesomeBooks-Single-Page-Website/)
