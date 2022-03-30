@@ -11,8 +11,8 @@
 
 ## Screenshot Demo
 
-![AddBook Page](./images/demo.png)
-![DisplayBooks Page](./images/demo2.png)
+![AddBook Page](./images/demo.jpeg)
+![DisplayBooks Page](./images/demo2.jpeg)
 
 ## Live Demo (if available)
 
