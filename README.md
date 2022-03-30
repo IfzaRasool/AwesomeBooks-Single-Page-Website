@@ -11,7 +11,7 @@
 
 ## Screenshot Demo
 
-![Book Page](./images/demo2.png)
+![Book Page](./images/demo2.jpg)
 
 ## Live Demo (if available)
 
